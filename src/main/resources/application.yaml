@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: jim-cool-cool
+  datasource: # most of the db stuff is ripped from https://www.baeldung.com/spring-boot-h2-database
+    url: jdbc:h2:mem:cooldb;DB_CLOSE_DELAY=-1
+    #url: jdbc:h2:file:/data/cool # < use this if you want to persist the h2 db to a file, rather than dropping it at the end of a session
+    driverClassName: org.h2.Driver
+    username: sa
+    password: woowooo
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console # this is actually the default, but popped it in here just to be verbose
+      settings.trace: false # prevents trace output
+      settings.web-allow-others: false # disables remote access
+
+server:
+  port: 29400
