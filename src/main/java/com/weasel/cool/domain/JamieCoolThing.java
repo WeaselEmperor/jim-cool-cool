@@ -2,6 +2,12 @@ package com.weasel.cool.domain;
 
 public class JamieCoolThing {
 
+    private static final JamieCoolThing singleCoolestJamie = new JamieCoolThing("jamie", CoolnessRating.OH_MY_WOOORD);
+
+    public static final JamieCoolThing coolestJamie() { return new JamieCoolThing("jamie", CoolnessRating.OH_MY_WOOORD);}
+    public static final JamieCoolThing singleCoolestJamie() { return singleCoolestJamie;}
+
+
     private String name;
     private CoolnessRating coolnessRating;
 
