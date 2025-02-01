@@ -25,7 +25,8 @@ public final class JamieImmutableThing {
         // so we create a new JamieCoolThing from the given one.
         this.jamieCoolThing = new JamieCoolThing(jamieCoolThing.getName(), jamieCoolThing.getCoolnessRating());
 
-        // create a null-safe *copy* of the given list
+        // create a null-safe *copy* of the given list, otherwise the code/person who passes the list to this constructor
+        // could easily add/remove things, since they'd have a reference to the same list
         this.coolnessRatings = Lists.newArrayList(CollectionUtils.emptyIfNull(coolnessRatings));
 
         // is a scalar/primitive value, so simple assignment is fine (since it's already being passed in as a value copy)
